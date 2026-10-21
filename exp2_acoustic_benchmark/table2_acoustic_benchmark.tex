@@ -1,0 +1,15 @@
+\begin{table*}[t]
+\centering
+\caption{Acoustic Performance Comparison Against Baseline Architectures Across Urban Canyons}
+\label{tab:acoustic_benchmark}
+\begin{tabular}{llcccc}
+\hline
+\textbf{Model Architecture} & \textbf{Canyon Awareness} & \textbf{$R^2$ Score} & \textbf{RMSE (dBA)} & \textbf{Latency (ms)} & \textbf{Speedup} \\
+\hline
+Standard MLP & None (Node-Isolated) & 0.3639 & 9.43 & 0.35 & 40689x \\
+Standard GCN & Adjacency Only & -0.3432 & 13.70 & 0.65 & 21793x \\
+Proposed PI-HGNN (Acoustic) & Full Aspect-Ratio Tensor (H/W) & 0.6778 & 6.71 & 0.25 & 55927x \\
+Numerical ISO 9613-2 / Ray & Governing Equations & 1.0000 & 0.00 & 14200.00 & 1.0x (Ref) \\
+\hline
+\end{tabular}
+\end{table*}

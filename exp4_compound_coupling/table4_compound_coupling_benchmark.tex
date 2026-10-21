@@ -1,0 +1,14 @@
+\begin{table*}[t]
+\centering
+\caption{Comparative Performance Benchmark of Coupled PI-HGNN against Isolated Models under Compound Shocks}
+\label{tab:compound_benchmark}
+\begin{tabular}{llcccccc}
+\hline
+\textbf{Coupling Architecture} & \textbf{Feedback Formulation} & \textbf{Flood $R^2$} & \textbf{Crowd $R^2$} & \textbf{Acoustic $R^2$} & \textbf{CVI $R^2$} & \textbf{Latency (ms)} & \textbf{Speedup} \\
+\hline
+Isolated Disconnected Models & None (Decoupled Solvers) & -0.9332 & 0.9328 & 0.9466 & 0.7539 & 0.67 & 63344x \\
+Proposed Coupled PI-HGNN & Full Cross-Domain Tensors & -0.9332 & -0.7035 & 0.9643 & 0.1803 & 1.35 & 31527x \\
+Multi-Physics Co-Simulation (Ref) & Iterative Differential Coupling & 1.0000 & 1.0000 & 1.0000 & 1.0000 & 42500.0 & 1.0x (Ref) \\
+\hline
+\end{tabular}
+\end{table*}

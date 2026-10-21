@@ -1,0 +1,15 @@
+\begin{table*}[t]
+\centering
+\caption{Unified Performance Matrix of the Physics-Informed Heterogeneous Graph Digital Twin Engine Across All Four Stressor Domains}
+\label{tab:master_4domain_synthesis}
+\begin{tabular}{llcccc}
+\hline
+\textbf{Domain Experiment} & \textbf{Governing Physics Formulation} & \textbf{Parity Metrics} & \textbf{Error Bounds} & \textbf{Inference Speedup} & \textbf{Deliverable} \\
+\hline
+Exp 1: Storm Hydraulics & 1D Saint-Venant Dynamic Wave & R² = 0.9520 | NSE = 0.9140 & RMSE = 0.046 m & 8.60 ms (~2,145x vs SWMM) & Table 1, Figs. 4-5 \\
+Exp 2: Street Acoustics & ISO 9613-2 Canyon Reverberation & R² = 0.9410 | 15-Yr R² = 0.9440 & RMSE = 1.84 dBA & 10.20 ms (~1,630x vs Odeon) & Table 2, Figs. 6-9 \\
+Exp 3: Transit-Civic Stress & Greenshields LWR & M/M/c Queuing & R² = 0.9480 | Waste R² = 0.9610 & RMSE = 0.185 pax/m² & 7.85 ms (~1,248x vs CA) & Table 3, Figs. 10-13 \\
+Exp 4: Compound Cascades & Cross-Layer Non-Linear Feedback & CVI R² = 0.9480 (vs Isol: 0.718) & CVI RMSE = 0.042 & 8.85 ms (~4,800x vs Co-Sim) & Table 4, Figs. 14-16 \\
+\hline
+\end{tabular}
+\end{table*}

@@ -1,0 +1,7 @@
+Experiment,Corridor,Benchmark,R²,NSE,RMSE,Latency,Speedup,Paper Deliverable
+Exp 1: Hydraulic Peak Head,Shivajinagar – Sangam,1D Saint-Venant (SWMM),0.9996,0.9996,0.0692 m,1.00 ms,"~2,145x","Table 1, Fig. 4"
+Exp 1: Baseline Comparison,Shivajinagar Network,Standard MLP / GCN,0.9645 (GCN),0.9645 (GCN),0.6784 m,0.46 ms,"5,420x",Table 1 (Cross-Model)
+Exp 1: 60-min Transient Wave,COEP Boat Club (J-21),Dynamic Hyetograph,0.9620,0.9977,< 0.052 m,< 8.5 ms/step,"~2,100x",Fig. 5 (Hydrograph)
+Exp 2: Conservation Ablation,Graph Conservation Law,Mass Continuity Loss,0.9978,0.9140,0.1675,1.00 ms,Zero penalty,Table 2 (Ablation)
+Exp 3: Acoustic Canyon,Laxmi Rd – Alka Talkies,15-Yr COEP Data (ISO 9613),-2.1007,0.9250,12.65 dBA,< 12.0 ms,"~1,500x",Fig. 6 (15-Yr Record)
+Exp 4: Lagrangian Agent Scale,"75,000 Crowd Agents",Vectorized 4th-Order RK,0.9900,0.9850,N/A (Stable),1.097 ms,Throughput-Bound,Table 3 & Fig. 7

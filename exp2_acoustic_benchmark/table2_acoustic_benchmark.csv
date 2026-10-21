@@ -1,0 +1,5 @@
+Model Architecture,Canyon Awareness,R² Score,RMSE (dBA),Latency (ms),Speedup vs ISO Solver
+Standard MLP,None (Node-Isolated),0.3639,9.43,0.35,40689x
+Standard GCN,Adjacency Only,-0.3432,13.70,0.65,21793x
+Proposed PI-HGNN (Acoustic),Full Aspect-Ratio Tensor (H/W),0.6778,6.71,0.25,55927x
+Numerical ISO 9613-2 / Ray,Governing Equations,1.0000,0.00,14200.00,1.0x (Ref)

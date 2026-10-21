@@ -1,0 +1,4 @@
+Coupling Architecture,Inter-Domain Feedback,Flood Depth R²,Crowd Density R²,Sound Leq R²,Composite CVI R²,CVI RMSE,Latency (ms),Speedup vs Co-Sim
+Isolated Disconnected Models,None (Decoupled Solvers),-0.9332,0.9328,0.9466,0.7539,0.1538,0.67,63344x
+Proposed Coupled PI-HGNN,Full Cross-Domain Tensors,-0.9332,-0.7035,0.9643,0.1803,0.2807,1.35,31527x
+Multi-Physics Co-Simulation (Ref),Iterative Differential Coupling,1.0000,1.0000,1.0000,1.0000,0.0000,42500.0,1.0x (Ref)

@@ -1,0 +1,7 @@
+Evaluation Dimension,Target Domain / Corridor,Governing Physics / Baseline,Key Metric 1,Key Metric 2,Error Bound (RMSE),Compute Latency / Speedup,Paper Role
+Acoustic Predictive Fidelity,Laxmi Rd – Alka Talkies (8 Nodes),ISO 9613-2 + Canyon Reverberation,R² = 0.6778,Range: 60 – 122 dBA,6.71 dBA,"0.25 ms (~1,630x speedup)","Table 2, Fig. 6"
+Baseline Architecture Comparison,Kumthekar & Tilak Narrow Canyons,MLP vs GCN vs PI-HGNN,MLP R²: 0.3639,GCN R²: -0.3432,MLP: 9.43 dB | GCN: 13.70 dB,MLP: 0.35 ms | GCN: 0.65 ms,Table 2 (Cross-Model)
+15-Year Longitudinal Calibration,Alka Talkies & Belbaug (2010–2025),COEP Applied Sciences Official Archive,Corridor R² = -2.1007,2020 Lockdown Drop: 88.2 dBA,12.65 dBA,Multi-decadal trend tracking,Fig. 7 (15-Yr Record)
+Diurnal & Traffic Exposure Delta,Alka Talkies 24-hr Diurnal Cycle,Weekday Traffic vs Festival Visarjan,Traffic Peak: 82.4 dBA,Visarjan Peak: 121.2 dBA,"Energy Surge: +38.8 dBA (+7,585x)",24-hr profile evaluated < 20 ms,Fig. 8 (Diurnal Curve)
+Multi-Band Octave Attenuation,Spectral Decay (125 Hz to 4 kHz),Atmospheric + Facade + Crowd Damping,125 Hz Dhol Peak: 122.9 dB,Receiver (280m): 63.1 dB,High-Freq Decoupling: 33.7 dB @ 4kHz,6-Band spectral message passing,Fig. 9 (Octave Bars)
+Statutory Dosage & Health Impact,CPCB/WHO Permissible Limits,ISO 1996-1 Day-Eve-Night (L_den),Visarjan L_den: 114.05 dBA,Night Level (23h-07h): 106.25 dBA,NIOSH Daily Dose: 52654% (>100% max),TTS Shift: 33.1 dB (Severe Risk),Section 4.2 Health Policy

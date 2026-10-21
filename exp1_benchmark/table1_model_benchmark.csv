@@ -1,0 +1,5 @@
+Model Architecture,Physics Awareness,R² Score,NSE,RMSE (m),Latency (ms),Speedup vs SWMM
+Standard MLP,No (Node-Isolated),0.9790,0.9790,0.5212,0.41,45054x
+Standard GCN (Kipf & Welling),Partial (Adjacency Only),0.9645,0.9645,0.6784,0.46,40149x
+Proposed PI-HGNN (Ours),Yes (Full Physical Tensor),0.9996,0.9996,0.0692,0.75,24475x
+Numerical SWMM (Benchmark),Exact (Governing Equations),1.0000,1.0000,0.0000,18450.00,1.0x (Ref)

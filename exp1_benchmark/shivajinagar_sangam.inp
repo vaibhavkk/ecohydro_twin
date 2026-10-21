@@ -1,0 +1,62 @@
+[TITLE]
+;;Project: Shivajinagar to Sangam Drainage Corridor (Pune)
+;;Model: EPA SWMM 5.2 Dynamic Wave Routing
+
+[OPTIONS]
+FLOW_UNITS           CMS
+INFILTRATION         HORTON
+FLOW_ROUTING         DYNAMICWAVE
+START_DATE           10/13/2026
+START_TIME           00:00:00
+END_DATE             10/13/2026
+END_TIME             02:00:00
+REPORT_STEP          00:01:00
+ROUTING_STEP         00:00:05
+VARIABLE_STEP        0.75
+MIN_SURFAREA         1.167
+NORMAL_FLOW_LIMITED  BOTH
+INERTIAL_DAMPING     PARTIAL
+
+[JUNCTIONS]
+;;Name           Elevation  MaxDepth   InitDepth  SurDepth   Aponded   
+J_SHIVAJI_STN    559.20     3.50       0.00       0.00       0.00      
+J_COURT_APPROACH 556.80     3.50       0.00       0.00       0.00      
+J_WELLESLEY_RD   553.50     4.00       0.00       0.00       0.00      
+J_COEP_MAIN      549.00     4.00       0.00       0.00       0.00      
+J_COEP_HOSTEL    546.50     4.00       0.00       0.00       0.00      
+J_BOAT_CLUB      544.20     4.50       0.00       0.00       0.00      
+J_SANGAM_GHAT    542.80     4.50       0.00       0.00       0.00      
+
+[OUTFALLS]
+;;Name           Elevation  Type       Stage Data       Gated    RouteTo
+OUTFALL_SANGAM   542.00     FREE                        NO       
+
+[CONDUITS]
+;;Name           From Node        To Node          Length     Roughness  InOffset   OutOffset  InitFlow   MaxFlow   
+C_1              J_SHIVAJI_STN    J_COURT_APPROACH 240.0      0.015      0.00       0.00       0.00       0.00      
+C_2              J_COURT_APPROACH J_WELLESLEY_RD   310.0      0.015      0.00       0.00       0.00       0.00      
+C_3              J_WELLESLEY_RD   J_COEP_MAIN      420.0      0.014      0.00       0.00       0.00       0.00      
+C_4              J_COEP_MAIN      J_COEP_HOSTEL    280.0      0.014      0.00       0.00       0.00       0.00      
+C_5              J_COEP_HOSTEL    J_BOAT_CLUB      340.0      0.013      0.00       0.00       0.00       0.00      
+C_6              J_BOAT_CLUB      J_SANGAM_GHAT    220.0      0.013      0.00       0.00       0.00       0.00      
+C_7              J_SANGAM_GHAT    OUTFALL_SANGAM   150.0      0.012      0.00       0.00       0.00       0.00      
+
+[XSECTIONS]
+;;Link           Shape        Geom1      Geom2      Geom3      Geom4      Barrels    Culvert   
+C_1              CIRCULAR     0.80       0.0        0.0        0.0        1          
+C_2              CIRCULAR     1.00       0.0        0.0        0.0        1          
+C_3              CIRCULAR     1.20       0.0        0.0        0.0        1          
+C_4              CIRCULAR     1.20       0.0        0.0        0.0        1          
+C_5              CIRCULAR     1.40       0.0        0.0        0.0        1          
+C_6              CIRCULAR     1.60       0.0        0.0        0.0        1          
+C_7              CIRCULAR     1.80       0.0        0.0        0.0        1          
+
+[INFLOWS]
+;;Node           Constituent      Baseline   Pattern
+J_SHIVAJI_STN    FLOW             6.0000
+J_COURT_APPROACH FLOW             4.5573
+J_WELLESLEY_RD   FLOW             7.9010
+J_COEP_MAIN      FLOW             6.7292
+J_COEP_HOSTEL    FLOW             4.9844
+J_BOAT_CLUB      FLOW             3.5000
+J_SANGAM_GHAT    FLOW             2.9062

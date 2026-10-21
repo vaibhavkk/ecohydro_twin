@@ -1,0 +1,5 @@
+Model Architecture,Acoustic Physics Layer,Spectral Awareness,R² Score,RMSE (dBA),L_den Pred (dBA),Latency (ms),Speedup
+Standard MLP,None (Node-Isolated),Broadband dBA,0.3639,9.43,105.7,0.35,40689x
+Standard GCN (Kipf & Welling),Adjacency Only,Broadband dBA,-0.3432,13.70,109.9,0.65,21793x
+Proposed Acoustic PI-HGNN,Aspect-Ratio (H/W) + Facade Alpha,6-Band Octave (125Hz-4kHz),0.6778,6.71,114.1,0.25,55927x
+Numerical ISO 9613-2 / Ray,Governing Differential Solver,Full Continuous Ray Tracing,1.0000,0.00,114.1,14200.0,1.0x (Ref)

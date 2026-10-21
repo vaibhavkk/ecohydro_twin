@@ -1,0 +1,7 @@
+Evaluation Dimension,Corridor / Scope,Governing Solver / Benchmark,Key Metric 1,Key Metric 2,Error Bound (RMSE),Compute Latency / Speedup,Paper Deliverable
+Crowd Density Parity (LWR),Kasba Peth & Mandai Alleyways,Greenshields LWR Conservation,R² = 0.6398,Peak: 5.15 pax/m² (LOS F),0.767 pax/m²,"7.85 ms (~1,248x vs CA)","Table 3, Fig. 10 & 11"
+Baseline Model Comparison,Tulshibaug Crush Neck,MLP vs GCN vs PI-HGNN,MLP R²: 0.7698,GCN R²: 0.4059,PI-HGNN: 0.767 vs MLP: 0.613,MLP: 1.15 ms | GCN: 3.20 ms,Table 3 (Cross-Model)
+Solid Waste Generation Rate,8 Historic Market Nodes,Vendor Dwell-Litter Coupling,R² = 0.7570,Max: 48.6 kg/hr (Tulshibaug),13.30 kg/hr,Multi-task forward pass,Fig. 12(a)
+Sanitation Queue Wait Time,Public Urinals (1 to 6 Seats),M/M/c Multi-Server Queuing,R² = 0.9180,Max Wait: > 35 min,54.08 min,Early warning < 8 ms,Fig. 12(b)
+45-Min Headway Pulse Wave,7-Min Train Inter-Arrivals,Dynamic Transient Tracking,Shockwave Lead Lag: 0 min,Queue Dissipation: 14 min,Max Dynamic Error < 0.12 pax/m²,46 steps computed in < 360 ms,Fig. 13 (Dynamic Wave)
+Regional Wari Stress Testing,"50,000 Pilgrims/hr Ingress",Ultra-Dense Boundary Scaling,"Max Footfall: 50,000/hr",Peak: 5.32 pax/m²,Zero Numerical Divergence,Execution: 8.12 ms,Section 4.3 (Regional)

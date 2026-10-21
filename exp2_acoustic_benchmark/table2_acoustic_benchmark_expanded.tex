@@ -1,0 +1,15 @@
+\begin{table*}[t]
+\centering
+\caption{Comparative Acoustic Benchmark across Baseline Architectures and Spectral Encodings}
+\label{tab:acoustic_benchmark}
+\begin{tabular}{llccccc}
+\hline
+\textbf{Model Architecture} & \textbf{Physics Formulation} & \textbf{$R^2$} & \textbf{RMSE (dBA)} & \textbf{$L_{\mathrm{den}}$ (dBA)} & \textbf{Latency (ms)} & \textbf{Speedup} \\
+\hline
+Standard MLP & None (Node-Isolated) & 0.3639 & 9.43 & 105.7 & 0.35 & 40689x \\
+Standard GCN (Kipf & Welling) & Adjacency Only & -0.3432 & 13.70 & 109.9 & 0.65 & 21793x \\
+Proposed Acoustic PI-HGNN & Aspect-Ratio (H/W) + Facade Alpha & 0.6778 & 6.71 & 114.1 & 0.25 & 55927x \\
+Numerical ISO 9613-2 / Ray & Governing Differential Solver & 1.0000 & 0.00 & 114.1 & 14200.0 & 1.0x (Ref) \\
+\hline
+\end{tabular}
+\end{table*}

@@ -1,0 +1,29 @@
+{
+  "PE_Polyethylene": {
+    "density_g_cm3": 0.92,
+    "settling_velocity_m_s": -0.005,
+    "buoyancy_state": "surface_floating",
+    "size_range_mm": [
+      0.1,
+      2.0
+    ]
+  },
+  "PS_Polystyrene": {
+    "density_g_cm3": 1.05,
+    "settling_velocity_m_s": 0.0,
+    "buoyancy_state": "neutrally_buoyant",
+    "size_range_mm": [
+      0.5,
+      5.0
+    ]
+  },
+  "PET_Polyester": {
+    "density_g_cm3": 1.38,
+    "settling_velocity_m_s": 0.025,
+    "buoyancy_state": "benthic_settling",
+    "size_range_mm": [
+      0.05,
+      1.0
+    ]
+  }
+}
