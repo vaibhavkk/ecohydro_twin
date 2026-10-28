@@ -1,0 +1,132 @@
+[TITLE]
+;;Project: Pune Historical Core 1.8-km Corridor Benchmark
+;;Archetype: Shivajinagar - Kasba Peth - Tulshibaug - Mandai - Alka Talkies
+;;Target: US EPA SWMM 5.2 Dynamic Wave Simulation for Compound Multi-Hazard Couplings
+
+[OPTIONS]
+;;Option             Value
+FLOW_UNITS           CMS
+INFILTRATION         HORTON
+FLOW_ROUTING         DYNAMICWAVE
+LINK_OFFSETS         DEPTH
+MIN_SLOPE            0.001
+ALLOW_PONDING        YES
+SKIP_STEADY_STATE    NO
+START_DATE           10/02/2026
+START_TIME           16:00:00
+REPORT_START_DATE    10/02/2026
+REPORT_START_TIME    16:00:00
+END_DATE             10/02/2026
+END_TIME             17:00:00
+SWEEP_START          01/01
+SWEEP_END            12/31
+DRY_DAYS             5
+REPORT_STEP          00:01:00
+WET_STEP             00:00:05
+DRY_STEP             00:01:00
+ROUTING_STEP         00:00:01
+RULE_STEP            00:00:00
+INERTIAL_DAMPING     PARTIAL
+NORMAL_FLOW_LIMITED  BOTH
+FORCE_MAIN_EQUATION  H-W
+VARIABLE_STEP        0.75
+LENGTHENING_STEP     0
+MIN_SURFAREA         1.167
+MAX_TRIALS           10
+HEAD_TOLERANCE       0.0015
+SYS_FLOW_TOL         5
+LAT_FLOW_TOL         5
+MINIMUM_STEP         0.5
+THREADS              4
+
+[EVAPORATION]
+;;Data Source    Parameters
+CONSTANT         0.0
+DRY_ONLY         NO
+
+[RAINGAGES]
+;;Name           Format    Interval SCF      Source    
+RG_Shivajinagar  INTENSITY 0:05     1.0      TIMESERIES TS_Cloudburst_95mm
+
+[SUBCATCHMENTS]
+;;Name           Rain Gage        Outlet       Area     %Imperv  Width    %Slope   CurbLen  SnowPack
+S_KasbaPeth      RG_Shivajinagar  J_Kasba      1.85     85       120      0.5      0        
+S_Tulshibaug     RG_Shivajinagar  J_Tulshibaug 0.95     95       45       0.4      0        
+S_Mandai         RG_Shivajinagar  J_Mandai     1.40     90       80       0.3      0        
+S_AlkaChowk      RG_Shivajinagar  J_Alka       2.10     80       150      0.6      0        
+
+[SUBAREAS]
+;;Subcatchment   N-Imperv   N-Perv     S-Imperv   S-Perv     %Zero-Imperv Route-To   %Routed 
+S_KasbaPeth      0.015      0.24       1.5        5.0        25           OUTLET     
+S_Tulshibaug     0.013      0.15       1.0        3.0        40           OUTLET     
+S_Mandai         0.014      0.20       1.2        4.0        30           OUTLET     
+S_AlkaChowk      0.015      0.25       1.5        5.0        20           OUTLET     
+
+[INFILTRATION]
+;;Subcatchment   MaxRate    MinRate    Decay      DryTime    MaxInfil  
+S_KasbaPeth      75.0       10.0       3.0        7          0         
+S_Tulshibaug     60.0       8.0        3.5        7          0         
+S_Mandai         70.0       9.0        3.0        7          0         
+S_AlkaChowk      75.0       10.0       3.0        7          0         
+
+[JUNCTIONS]
+;;Name           Elevation  MaxDepth   InitDepth  SurDepth   Aponded   
+J_Shivajinagar   548.50     2.20       0.10       1.50       250.0     
+J_Kasba          546.80     2.40       0.15       1.80       320.0     
+J_Tulshibaug     545.10     2.10       0.20       2.00       450.0     
+J_Mandai         543.90     2.50       0.20       1.50       380.0     
+J_Alka           542.40     2.80       0.25       1.20       500.0     
+
+[OUTFALLS]
+;;Name           Elevation  Type       Stage Data       Gated    Route To
+Outfall_Mutha    540.50     FREE                        NO       
+
+[CONDUITS]
+;;Name           From Node        To Node          Length     Roughness  InOffset   OutOffset  InitFlow   MaxFlow   
+C_Shiva_Kasba    J_Shivajinagar   J_Kasba          450        0.016      0          0          0          0         
+C_Kasba_Tulshi   J_Kasba          J_Tulshibaug     380        0.017      0          0          0          0         
+C_Tulshi_Mandai  J_Tulshibaug     J_Mandai         320        0.018      0          0          0          0         
+C_Mandai_Alka    J_Mandai         J_Alka           410        0.016      0          0          0          0         
+C_Alka_Outfall   J_Alka           Outfall_Mutha    240        0.015      0          0          0          0         
+
+[XSECTIONS]
+;;Link           Shape        Geom1      Geom2      Geom3      Geom4      Barrels    Culvert   
+C_Shiva_Kasba    CIRCULAR     1.00       0          0          0          1                    
+C_Kasba_Tulshi   CIRCULAR     0.90       0          0          0          1                    
+C_Tulshi_Mandai  CIRCULAR     0.80       0          0          0          1                    
+C_Mandai_Alka    CIRCULAR     1.10       0          0          0          1                    
+C_Alka_Outfall   CIRCULAR     1.20       0          0          0          1                    
+
+[TIMESERIES]
+;;Name           Date       Time       Value     
+;;Pune Convective Cloudburst 95 mm/h Synthetic Profile (IMD IDF Calibrated)
+TS_Cloudburst_95mm          00:00      5.0
+TS_Cloudburst_95mm          00:10      22.0
+TS_Cloudburst_95mm          00:20      95.0
+TS_Cloudburst_95mm          00:30      42.0
+TS_Cloudburst_95mm          00:40      15.0
+TS_Cloudburst_95mm          00:50      4.0
+TS_Cloudburst_95mm          01:00      0.0
+
+[REPORT]
+;;Reporting Options
+INPUT      NO
+CONTROLS   NO
+SUBCATCHMENTS ALL
+NODES ALL
+LINKS ALL
+
+[COORDINATES]
+;;Node           X-Coord            Y-Coord           
+J_Shivajinagar   73.8510            18.5305           
+J_Kasba          73.8562            18.5204           
+J_Tulshibaug     73.8550            18.5152           
+J_Mandai         73.8540            18.5110           
+J_Alka           73.8445            18.5135           
+Outfall_Mutha    73.8410            18.5160           
+
+[VERTICES]
+;;Link           X-Coord            Y-Coord           
+
+[Polygons]
+;;Subcatchment   X-Coord            Y-Coord
